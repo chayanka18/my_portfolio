@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "../../dynamicValues"
+		},
+		{
+			"path": "../../stateprop"
+		},
+		{
+			"path": ".."
+		}
+	],
+	"settings": {}
+}
