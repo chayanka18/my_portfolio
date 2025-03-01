@@ -1,10 +1,10 @@
 import React from "react";
-import gemini from "../assets/portfolio/gemini.png";
-import boot from "../assets/portfolio/boot.png";
-import gemma from "../assets/portfolio/gemma.png";
-import memory from "../assets/portfolio/memory.png";
-import stop from "../assets/portfolio/stop.png";
-import tic from "../assets/portfolio/tic.png";
+import gemini from "../assets/projects/gemini.png";
+import boot from "../assets/projects/boot.png";
+import gemma from "../assets/projects/gemma.png";
+import memory from "../assets/projects/memory.png";
+import stop from "../assets/projects/stop.png";
+import tic from "../assets/projects/tic.png";
 
 const Portfolio = () => {
   const portfolios = [
