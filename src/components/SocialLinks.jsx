@@ -34,7 +34,11 @@ export const SocialLinks = () => {
       href: "mailto:chayanka22318@gmail.com",
     },
     {
+<<<<<<< HEAD
       id: 1,
+=======
+      id: 4,
+>>>>>>> 33a558125055ad7bd4db45e0d11eb4e27068fdbe
       child: (
         <>
           Resume
