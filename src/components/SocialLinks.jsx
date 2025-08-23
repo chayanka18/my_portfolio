@@ -7,71 +7,52 @@ export const SocialLinks = () => {
   const links = [
     {
       id: 1,
-      child: (
-        <>
-          LinkedIn <FaLinkedin size={30} />
-        </>
-      ),
+      icon: <FaLinkedin size={20} />,
+      label: "LinkedIn",
       href: "https://www.linkedin.com/in/chayanka/",
-      style: "rounded-tr-md",
+      color: "hover:bg-blue-600",
     },
     {
       id: 2,
-      child: (
-        <>
-          GitHub <FaGithub size={30} />
-        </>
-      ),
+      icon: <FaGithub size={20} />,
+      label: "GitHub",
       href: "https://github.com/chayanka18",
+      color: "hover:bg-gray-600",
     },
     {
       id: 3,
-      child: (
-        <>
-          Mail <HiOutlineMail size={30} />
-        </>
-      ),
+      icon: <HiOutlineMail size={20} />,
+      label: "Email",
       href: "mailto:chayanka22318@gmail.com",
+      color: "hover:bg-red-600",
     },
-    {
-<<<<<<< HEAD
-      id: 1,
-=======
-      id: 4,
->>>>>>> 33a558125055ad7bd4db45e0d11eb4e27068fdbe
-      child: (
-        <>
-          Resume
-          <BsFillPersonLinesFill size={30} />
-        </>
-      ),
-      href: "https://drive.google.com/file/d/1BphgfZS7qToAJmdjATzoxhY7aNOZ8Gk4/view?usp=drive_link",
-      style: "rounded-br-md",
-    },
+    // {
+    //   id: 4,
+    //   icon: <BsFillPersonLinesFill size={20} />,
+    //   label: "Resume",
+    //   href: "https://drive.google.com/drive/u/0/folders/12YaaZ7sVG-7x2N9FJGGH9muChd06ZihU",
+    //   color: "hover:bg-purple-600",
+    // },
   ];
+
   return (
-    <div className=" hidden lg:flex flex-col top-[35%] left-0 fixed">
-      <ul>
-        {links.map(({ id, child, href, style }) => (
-          <li
+    <div className="hidden lg:flex flex-col fixed top-1/2 left-6 transform -translate-y-1/2 z-50">
+      <div className="flex flex-col gap-3">
+        {links.map(({ id, icon, label, href, color }) => (
+          <a
             key={id}
-            className={
-              "flex justify-between items-center w-40 h-14 px-4 ml-[-100px] bg-gray-500 hover:ml-[-5px] hover:rounded-md duration-300" +
-              " " +
-              style
-            }
+            href={href}
+            target="_blank"
+            rel="noreferrer"
+            className={`group flex items-center justify-center w-10 h-10 bg-gray-800/70 backdrop-blur-sm border border-gray-700/50 rounded-lg text-gray-300 transition-all duration-300 ${color} hover:border-gray-500/50 hover:shadow-lg hover:scale-110`}
+            title={label}
           >
-            <a
-              href={href}
-              className="flex justify-between items-center w-full text-white"
-              target="_blank"
-              rel="noreferrer"
-            >
-              {child}
-            </a>
-          </li>
+            <span className="transition-transform duration-300 group-hover:scale-110">
+              {icon}
+            </span>
+          </a>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };

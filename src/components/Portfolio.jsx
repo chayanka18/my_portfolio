@@ -10,80 +10,84 @@ const Portfolio = () => {
   const portfolios = [
     {
       id: 1,
+      title: "Internal Server Management Dashboard",
+      technologies: "React.js, Flask, Python, MariaDB, Docker, Kubernetes",
+      description: "Enterprise-grade full-stack web application for managing VMware ESXi virtual machines and HP iLO server hardware with real-time monitoring, Google OAuth 2.0 authentication, and Kubernetes deployment.",
+      src: gemini, // placeholder image
+      code: "#", // private project
+      demo: "#",
+    },
+    {
+      id: 2,
+      title: "OpenShift Container Platform Deployment",
+      technologies: "OCP 4.x, UPI, Disconnected Setup, Agent-based Installation, Linux",
+      description: "Deployed OpenShift Container Platform clusters in connected and disconnected environments using UPI with custom mirror registry, ImageSetConfig, and operator mirroring for air-gapped setups.",
+      src: boot, // placeholder image
+      code: "#", // enterprise project
+      demo: "#",
+    },
+    {
+      id: 3,
+      title: "GeminiClone",
+      technologies: "React.js, Vite, JavaScript, CSS, API Integration",
+      description: "Responsive AI chat interface clone featuring real-time conversation capabilities, external API integration, and performance optimizations for smooth user experience.",
       src: gemini,
       code: "https://github.com/chayanka18/Gemini-clone",
       demo: "https://gemini-clone-x.vercel.app/",
     },
     {
-      id: 2,
-      src: boot,
-      code: "https://github.com/chayanka18/Bootstrap_iCoder",
-      demo: "https://chayanka18.github.io/Bootstrap_iCoder/",
-    },
-    {
-      id: 3,
+      id: 4,
+      title: "Gemini Jewelry E-commerce",
+      technologies: "Java, Firebase, Razorpay, Android Development",
+      description: "Comprehensive e-commerce mobile application for jewelry retail with secure Razorpay payment processing, Firebase backend, and real-time inventory management.",
       src: gemma,
       code: "https://github.com/chayanka18/Gemma",
-      demo: "https://drive.google.com/file/d/1KkP6tdeonk6hvViGldc6m9eyEYV7E5DN/view",
-    },
-    {
-      id: 4,
-      src: memory,
-      code: "https://github.com/chayanka18/MemoryGame",
-      demo: "https://chayanka18.github.io/MemoryGame/",
-    },
-    {
-      id: 5,
-      src: stop,
-      code: "https://github.com/chayanka18/Stopwatch",
-      demo: "https://chayanka18.github.io/Stopwatch/",
-    },
-    {
-      id: 6,
-      src: tic,
-      code: "https://github.com/chayanka18/tic-tac-toe",
-      demo: "https://chayanka18.github.io/tic-tac-toe/",
+      demo: "https://github.com/chayanka18/Gemma",
     },
   ];
   return (
-    <div
+    <section
       id="portfolio"
-      className=" w-full text-white flex items-center justify-center"
+      className="section-padding bg-gray-950 relative overflow-hidden"
     >
-      <div className="max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full mt-36">
-        <div className="pb-8 text-center">
-          <p className="text-4xl font-bold inline border-b-4 border-gray-500">
-            Portfolio
+      {/* Background decoration */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-900/5 via-transparent to-purple-900/5"></div>
+      
+      <div className="container-custom relative">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            Featured <span className="gradient-text">Projects</span>
+          </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mb-6 rounded-full"></div>
+          <p className="text-gray-300 text-lg max-w-xl mx-auto">
+            Recent web applications and interactive projects
           </p>
-          <p className="py-6">Check out some of my work right here</p>
         </div>
 
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 px-12 sm:px-0">
-          {portfolios.map(({ id, src, demo, code }) => (
+        <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-8">
+          {portfolios.map(({ id, title, technologies, description }) => (
             <div
               key={id}
-              className="shadow-md shadow-gray-600 rounded-lg hover:shadow-[0_0_15px_3px_rgba(255,255,255,0.5)] transition duration-300 hover:scale-105"
+              className="bg-gray-800/40 backdrop-blur-sm rounded-2xl overflow-hidden border border-gray-700/50 hover:border-blue-500/60 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500 group transform hover:scale-105"
             >
-              <img src={src} alt="" className="h-4/6 rounded-md" />
-              <div className="flex items-center justify-center">
-                <button
-                  className="w-1/2 px-6 py-3 m-4 duration-300 hover:scale-105 text-white rounded-lg hover:shadow-[0_0_20px_5px_rgba(139,92,246,0.8)]"
-                  onClick={() => window.open(demo, "_blank")}
-                >
-                  Demo
-                </button>
-                <button
-                  className="w-1/2 px-6 py-3 m-4 duration-300 hover:scale-105 text-white rounded-lg hover:shadow-[0_0_20px_5px_rgba(139,92,246,0.8)]"
-                  onClick={() => window.open(code, "_blank")}
-                >
-                  Code
-                </button>
+              <div className="p-6 group-hover:cursor-pointer">
+                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-blue-300 transition-colors duration-300">
+                  {title}
+                </h3>
+                
+                <p className="text-blue-400 text-sm font-medium mb-3">
+                  {technologies}
+                </p>
+                
+                <p className="text-gray-300 text-sm leading-relaxed">
+                  {description}
+                </p>
               </div>
             </div>
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
